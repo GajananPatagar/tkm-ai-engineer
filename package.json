@@ -32,6 +32,7 @@
     "react-dom": "latest",
     "lucide-react": "latest",
     "framer-motion": "latest"
+"fs-extra": "^11.1.0"
   },
   "devDependencies": {
     "electron": "latest",
