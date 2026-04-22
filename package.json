@@ -1,0 +1,29 @@
+{
+  "name": "tkm-ai-engineer",
+  "version": "1.0.0",
+  "description": "2050 AI Engineering Partner",
+  "main": "main.js",
+  "author": "Gajanan Patagar",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "dist": "next build && electron-builder --win --portable"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "lucide-react": "latest"
+  },
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "latest"
+  },
+  "build": {
+    "appId": "com.tkm.ai",
+    "productName": "TKM AI Engineer",
+    "directories": { "output": "dist" },
+    "files": [ "out/**/*", "main.js", "package.json" ],
+    "win": { "target": "portable", "icon": "public/favicon.ico" }
+  }
+}
