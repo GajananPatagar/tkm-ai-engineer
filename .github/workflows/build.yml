@@ -2,25 +2,29 @@ name: Build Windows EXE
 on: [push]
 
 jobs:
-  release:
+  build_exe:
     runs-on: windows-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'npm'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install --include=dev
 
-      - name: Build and Package
+      - name: Build and Package EXE
         run: npm run dist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload EXE
+      - name: Upload Finished App
         uses: actions/upload-artifact@v4
         with:
-          name: TKM-AI-App
+          name: TKM-AI-Portable-EXE
           path: dist/*.exe
+

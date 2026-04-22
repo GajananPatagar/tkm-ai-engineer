@@ -1,13 +1,23 @@
 {
   "name": "tkm-ai-engineer",
   "version": "1.0.0",
-  "description": "2050 AI Engineering Partner",
+  "description": "Professional Autonomous PLC Engineer",
   "main": "main.js",
   "author": "Gajanan Patagar",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "dist": "next build && electron-builder --win --portable"
+  },
+  "build": {
+    "appId": "com.tkm.ai.engineer",
+    "productName": "TKM AI Engineer",
+    "directories": { "output": "dist" },
+    "files": [ "out/**/*", "main.js", "package.json", "public/**/*" ],
+    "win": {
+      "target": "portable",
+      "requestedExecutionLevel": "asInvoker"
+    }
   },
   "dependencies": {
     "next": "latest",
@@ -18,12 +28,5 @@
   "devDependencies": {
     "electron": "latest",
     "electron-builder": "latest"
-  },
-  "build": {
-    "appId": "com.tkm.ai",
-    "productName": "TKM AI Engineer",
-    "directories": { "output": "dist" },
-    "files": [ "out/**/*", "main.js", "package.json" ],
-    "win": { "target": "portable", "icon": "public/favicon.ico" }
   }
 }
