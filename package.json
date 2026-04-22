@@ -1,25 +1,37 @@
 {
   "name": "tkm-ai-engineer",
   "version": "1.0.0",
+  "description": "Professional Autonomous PLC Engineering Partner v2050",
   "main": "main.js",
+  "author": "Gajanan Patagar",
   "scripts": {
+    "dev": "next dev",
     "build": "next build",
     "dist": "npm run build && electron-builder --win"
   },
   "build": {
-    "appId": "com.tkm.ai",
+    "appId": "com.tkm.ai.engineer",
     "productName": "TKM AI Engineer",
-    "directories": { "output": "dist" },
-    "files": [ "out/**/*", "main.js", "package.json" ],
-    "win": { 
-      "target": "portable" 
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "out/**/*",
+      "main.js",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ]
     }
   },
   "dependencies": {
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "lucide-react": "latest"
+    "lucide-react": "latest",
+    "framer-motion": "latest"
   },
   "devDependencies": {
     "electron": "latest",
@@ -27,6 +39,9 @@
     "typescript": "latest",
     "@types/react": "latest",
     "@types/node": "latest",
-    "@types/react-dom": "latest"
+    "@types/react-dom": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest",
+    "autoprefixer": "latest"
   }
 }
