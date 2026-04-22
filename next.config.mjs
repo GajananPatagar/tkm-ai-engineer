@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',      // Crucial for EXE build
-  images: { unoptimized: true }, // Required for static export
-  trailingSlash: true,
+  output: 'export',          // Creates the 'out' folder for Electron
+  images: { unoptimized: true }, // Fixes image loading in EXE
+  trailingSlash: true,       // Fixes page routing on Windows
+  distDir: 'out',            // Ensures the output folder is named 'out'
 };
 
 export default nextConfig;
-

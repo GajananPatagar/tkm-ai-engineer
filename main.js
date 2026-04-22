@@ -3,23 +3,13 @@ const path = require('path');
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 1280,
+    width: 1200,
     height: 800,
-    title: "TKM AI Engineering Partner v2050",
-    autoHideMenuBar: true, // Clean "2050" look
-    webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false,
-    }
+    webPreferences: { nodeIntegration: true, contextIsolation: false }
   });
 
-  // Points to the folder Next.js will create
-  const indexPath = path.join(__dirname, 'out', 'index.html');
-  win.loadFile(indexPath);
+  // This is the important part: it looks for the out/index.html file
+  win.loadFile(path.join(__dirname, 'out/index.html'));
 }
 
-app.on('ready', createWindow);
-
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') app.quit();
-});
+app.whenReady().then(createWindow);
