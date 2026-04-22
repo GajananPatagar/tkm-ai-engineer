@@ -1,30 +1,26 @@
 name: Build Windows EXE
-on: [push]
+on: [push] # Runs every time you push from Termux
 
 jobs:
-  build_exe:
+  build_job:
     runs-on: windows-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Install Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
       - name: Install Dependencies
-        run: npm install --include=dev
+        run: npm install
 
-      - name: Build and Package EXE
+      - name: Create EXE
         run: npm run dist
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Finished App
         uses: actions/upload-artifact@v4
         with:
-          name: TKM-AI-Portable-EXE
+          name: TKM-AI-Portable-App
           path: dist/*.exe
-

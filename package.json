@@ -10,23 +10,16 @@
   "build": {
     "appId": "com.tkm.ai",
     "productName": "TKM AI Engineer",
-    "directories": {
-      "output": "dist"
-    },
-    "files": [
-      "out/**/*",
-      "main.js",
-      "package.json"
-    ],
-    "win": {
-      "target": "portable"
-    }
+    "directories": { "output": "dist" },
+    "files": [ "out/**/*", "main.js", "package.json" ],
+    "win": { "target": "portable" }
   },
   "dependencies": {
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "lucide-react": "latest"
+    "lucide-react": "latest",
+    "framer-motion": "latest"
   },
   "devDependencies": {
     "electron": "latest",
